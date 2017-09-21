@@ -5,7 +5,7 @@ An older version (2014-04-06) of libesedb is used as newer versions are slow to 
 ## To use
 
 * Clone this repo
-* Execute setup.sh
+* Execute 'setup.sh'
 * Copy 'NTDS.dit', 'SYSTEM' and 'SAM' into the NTDS directory
 * Execute 'extract.sh'
 

@@ -1,0 +1,3 @@
+[submodule "ntdsxtract"]
+	path = ntdsxtract
+	url = https://github.com/csababarta/ntdsxtract

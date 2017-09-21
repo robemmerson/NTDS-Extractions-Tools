@@ -4,7 +4,10 @@ An older version (2014-04-06) of libesedb is used as newer versions are slow to 
 
 ## To use
 
-Clone this repo, copy 'NTDS.dit', 'SYSTEM' and 'SAM' into the NTDS directory and run 'extract.sh'.
+* Clone this repo
+* Execute setup.sh
+* Copy 'NTDS.dit', 'SYSTEM' and 'SAM' into the NTDS directory
+* Execute 'extract.sh'
 
 ## Credits
 All credit for the tools go to the creator of libesedb (https://github.com/libyal/libesedb), scripts and automation created by Rob Emmerson.

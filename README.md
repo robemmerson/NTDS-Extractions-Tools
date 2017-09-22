@@ -1,4 +1,4 @@
-# Libesedb Toolkit
+# NTDS Extractions Tools
 
 An older version (2014-04-06) of libesedb is used as newer versions are slow to extract large NTDS.dit files.
 

@@ -8,14 +8,20 @@
 
 if [ -e NTDS/NTDS.dit ] && [ -e NTDS/NTDS.dit ] && [ -e NTDS/NTDS.dit ]
 then
+	echo "Extracting libesedb..."
 	tar xvzf libesedb-experimental-20140406.tar.gz
 	cd libesedb-20140406
+	clear
+	echo "Building libesedb..."
 	CFLAGS="-g -O2 -Wall -fgnu89-inline" ./configure --enable-static-executables
 	make
 	cd ..
-	mkdir extracted/work
-	./libesedb-20140406/esedbtools/esedbexport -t extracted NTDS/NTDS.dit
-	python ntdsxtract/dsusers.py extracted.export/datatable.4 extracted.export/link_table.7 extracted/work --syshive NTDS/SYSTEM --lmoutfile extracted/lm_hashes.txt --ntoutfile extracted/nt_hashes.txt --pwdformat ocl --passwordhashes --passwordhistory --certificates --supplcreds --membership
+	clear
+	echo "Preparing datafiles using esedbexport..."
+	./libesedb-20140406/esedbtools/esedbexport -t NTDS NTDS/NTDS.dit
+	clear
+	echo "Extracting hashes..."
+	python ntdsxtract/dsusers.py NTDS.export/datatable.4 NTDS.export/link_table.7 NTDS.export --syshive NTDS/SYSTEM --ntoutfile ../NTDS/extracted_hashes.txt --pwdformat ophc --passwordhashes --passwordhistory
 else
 	echo ""
 	echo "Error: NTDS.dit, SYSTEM and SAM are not all present in the NTDS"
